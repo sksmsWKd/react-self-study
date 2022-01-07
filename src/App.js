@@ -4,11 +4,14 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Hello from "./component/Hello";
-
+import Header from "./component/Header";
+import DayList from "./component/DayList";
 function App() {
   return (
     <div className="App">
-      <Hello />
+      {/* <Hello /> */}
+      <Header />
+      <DayList />
     </div>
   );
   //div한개필수
