@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <div className="header">
       <h1>
-        <a href="/">Word </a>
+        <Link to="/">Word </Link>
       </h1>
       <div className="menu">
         <a href="#x" className="link">
