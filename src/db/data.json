@@ -17,30 +17,30 @@
     {
       "id": 1,
       "day": 1,
-      "eng": "book",
-      "kor": "책",
+      "eng": "nostalgia",
+      "kor": "향수",
       "isDone": false
     },
     {
       "id": 3,
       "day": 2,
-      "eng": "car",
-      "kor": "자동차",
-      "isDone": false
-    },
-    {
-      "id": 5,
-      "day": 3,
-      "eng": "school",
-      "kor": "학교",
+      "eng": "nose dive",
+      "kor": "추락하다",
       "isDone": false
     },
     {
       "id": 6,
       "day": 3,
-      "eng": "pencil",
-      "kor": "연필",
+      "eng": "downfall",
+      "kor": "폭락",
       "isDone": false
+    },
+    {
+      "day": "1",
+      "eng": "asd",
+      "kor": "asd",
+      "isDone": false,
+      "id": 7
     }
   ]
 }

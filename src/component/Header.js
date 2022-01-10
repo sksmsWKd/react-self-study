@@ -1,17 +1,19 @@
 import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <div className="header">
       <h1>
-        <Link to="/">Word </Link>
+        <Link to="/">words</Link>
       </h1>
+
       <div className="menu">
-        <a href="#x" className="link">
-          add Word
-        </a>
-        <a href="#x" className="link">
-          add Day
-        </a>
+        <Link to="/create_word" className="link">
+          add word
+        </Link>
+        <Link to="/create_day" className="link">
+          add day
+        </Link>
       </div>
     </div>
   );

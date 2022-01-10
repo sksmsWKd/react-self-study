@@ -7,7 +7,9 @@ import Hello from "./component/Hello";
 import Header from "./component/Header";
 import DayList from "./component/DayList";
 import Day from "./component/Day";
+import CreateWord from "./component/CreateWord";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,11 +22,13 @@ function App() {
           {/* url 이 완전히 같을 경우만. */}
           {/* 그냥 path="/"시, 앞만 같아도 같은것으로인식 */}
           <Route path="/day/:day" element={<Day />} />
+          <Route path="/create_word" element={<CreateWord />} />
+          <Route path="/create_day" element={<CreateDay />} />
           {/* 다이나믹한 url 처리시, :사용 day 변수로 1을 얻을수 있다. url 변수를 얻고싶을때는 , useParams사용*/}
         </Routes>
-        <Route>
-          {/* 아무것도 없는곳에 적으면, 앞에있는조건이 모두 만족하지않을때 표시 */}
-        </Route>
+        {/* <Route>
+         아무것도 없는곳에 적으면, 앞에있는조건이 모두 만족하지않을때 표시 
+        </Route> */}
 
         {/* Routes 내부는 url에 따라 다른 내부를 보여줄것임. 
          Routes 외부는 모든 url에 노출 
