@@ -9,6 +9,7 @@ import DayList from "./component/DayList";
 import Day from "./component/Day";
 import CreateWord from "./component/CreateWord";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CreateDay from "./component/CreateDay";
 
 function App() {
   return (

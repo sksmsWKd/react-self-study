@@ -1,9 +1,9 @@
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router";
 import { useRef } from "react";
 import useFetch from "./hooks/useFetch";
 export default function CreateWord() {
   const days = useFetch("http://localhost:3001/days");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function onSubmit(e) {
     e.preventDefault();
@@ -30,8 +30,8 @@ export default function CreateWord() {
     }).then((res) => {
       if (res.ok) {
         alert("생성완료");
-        history.push(`/day/${dayRef.current.value}`);
-        //history는  해당페이지로 이동. a태그 사용하지않고 페이지 이동시
+        navigate(`/day/${dayRef.current.value}`);
+        //navigate  해당페이지로 이동. a태그 사용하지않고 페이지 이동시
       }
     });
   }
