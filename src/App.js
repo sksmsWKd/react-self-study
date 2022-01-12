@@ -10,6 +10,7 @@ import Day from "./component/Day";
 import CreateWord from "./component/CreateWord";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CreateDay from "./component/CreateDay";
+import Sample from "./component/Sample";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className="App">
         {/* <Hello /> */}
         <Header />
+
         <Routes>
           {/* 여러개의 route를 감싸는 컴포넌트 */}
           <Route exact path="/" element={<DayList />} />
@@ -39,6 +41,7 @@ function App() {
        react router dom 의 변수를 이용할수도있음 
         {(isActive)=> ...(true인가??)}
         */}
+        <Sample />
       </div>
     </BrowserRouter>
     //app전체를 BrowserRouter 감싼다

@@ -60,3 +60,7 @@ body {
   background: rgb(231, 176, 238);
   margin: 10px;
 }
+div {
+  border: 2px solid #61dafb;
+  margin: 10px;
+}
