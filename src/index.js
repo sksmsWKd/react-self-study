@@ -3,20 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-
-import reducers from "./reducers";
-
-const store = createStore(reducers);
+export {
+  actionIncrement,
+  actionDecrement,
+  INCREMENT,
+  DECREMENT,
+} from "./mainAction";
 
 ReactDOM.render(
   //provider 는 컴포넌트로 , store사용가능하게함.
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
