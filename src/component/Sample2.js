@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function Sample2() {
+export default function Sample2({ props }) {
   return (
     <div>
-      <h2>blank page</h2>
-      <button>+</button>
-      <button>-</button>
+      <h2>{props.num}</h2>
+      <button onClick={props.onClickIncrease}>+</button>
+      <button onClick={props.onClickDecrease}>-</button>
     </div>
 
     //   state:  store에서 저장되어 있는 값.

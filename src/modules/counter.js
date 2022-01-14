@@ -1,4 +1,7 @@
 import { createAction } from "redux-actions";
+// npm install redux-actions
+// action 생성 함수를 직접 안만들어도 됨.
+import { combineReducers } from "redux";
 
 const INCREMENT = "INCREMENT";
 const DECREMENT = "DECREMENT";
@@ -56,7 +59,7 @@ const initialState = {
 };
 // state 저장. 초기상태다.
 
-export default function reducer(state = initialState, action) {
+function reducer(state = initialState, action) {
   // 3.action 을 만들었으나 이름이 다른데,
   //어떻게 action 이라고 달랑써놓고 action의 type 을 인식가능한가??
 
@@ -84,10 +87,12 @@ export default function reducer(state = initialState, action) {
 //ㅡㅡㅡㅡㅡㅡ
 
 // import { combineReducers } from 'redux';
-// import counter from './counter';
 
-// export default combineReducers({
-//   counter
-// });
+const rootReducer = combineReducers({
+  reducer,
+});
+export default rootReducer;
 
 //reducer 가 여러개일경우, 위와같이 묶을필요가 있다.
+
+//이후 , index.js 에 react 와 redux 를 연동하자.

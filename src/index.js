@@ -3,19 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-export {
-  actionIncrement,
-  actionDecrement,
-  INCREMENT,
-  DECREMENT,
-} from "./mainAction";
 
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./modules/counter";
+//redux 이용위한 import 3
+
+import { composeWithDevTools } from "redux-devtools-extension";
+//dev-tool 이용위한 import
+//npm install redux-devtools-extension
+
+const store = createStore(rootReducer, composeWithDevTools());
+//store 는
 ReactDOM.render(
   //provider 는 컴포넌트로 , store사용가능하게함.
-
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+    ,
+  </Provider>,
   document.getElementById("root")
 );
 

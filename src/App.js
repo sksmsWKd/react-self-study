@@ -11,8 +11,12 @@ import CreateWord from "./component/CreateWord";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CreateDay from "./component/CreateDay";
 import Sample from "./component/Sample";
+import { connect } from "react-redux";
+//연결위함
 
-function App() {
+import { actionIncrement, actionDecrement } from "./modules/counter";
+
+function App(props) {
   return (
     <BrowserRouter>
       <div className="App">
@@ -41,7 +45,11 @@ function App() {
        react router dom 의 변수를 이용할수도있음 
         {(isActive)=> ...(true인가??)}
         */}
-        <Sample />
+        <Sample
+          num={props.num}
+          onClickIncrease={props.onClickIncrease}
+          onClickDecrease={props.onClickDecrease}
+        />
       </div>
     </BrowserRouter>
     //app전체를 BrowserRouter 감싼다
@@ -49,7 +57,29 @@ function App() {
   //div한개필수
 }
 
-// https://www.youtube.com/watch?v=FqnAFX9lQPQ
-// 데이터바인딩, 7분30
+const mapStateToProps = (state) => {
+  return {
+    num: state.reducer.num,
+  };
+};
+//mapStateToProps는 함수이며, connect 함수의 첫번째 인수이다.
+// mapStateToProps는 store로부터 state를 가져와서, 컴포넌트의 props로 state를 보내주는 역할을 한다.
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  onClickIncrease: () => {
+    dispatch(actionIncrement());
+  },
+  onClickDecrease: () => {
+    dispatch(actionDecrement());
+  },
+});
+
+//mapDispatchToProps는 connect 함수의 두번째 인자이며,
+// action을 reducer 함수에게 보내는 역할을 가진 dispatch를 props로 보낼 수 있다.
+//첫번째 인자 dispatch: Redux의 store.dispatch()와 같음
+// 두번째 인자 ownProps: 생략가능. 컴포넌트가 현재 가지고 있는 모든 props를 보여준다
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+//store생성은 index.js
+//redux를 component 에 적용은 app.js
